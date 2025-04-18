@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Submit Your Homework</title>
+<h1>Submit Your Homework</h1>
+<form method="POST" enctype="multipart/form-data">
+    <label for="token">Password:</label><br>
+    <input type="password" name="token" required><br><br>
+    
+    <label for="submission">Your Submission (Text or File):</label><br>
+    <textarea name="submission" placeholder="Enter text here"></textarea><br>
+    
+    <label for="file">Or upload a file (PDF/PNG):</label><br>
+    <input type="file" name="file"><br><br>
+
+    <button type="submit">Submit</button>
+</form>

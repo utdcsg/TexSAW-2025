@@ -1,0 +1,8 @@
+services:
+  gccfuck:
+    build: .
+    ports:
+      - "20225:5000"
+    restart: unless-stopped
+    privileged: true
+

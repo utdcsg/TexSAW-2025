@@ -1,0 +1,6 @@
+services:
+  deprecatedsite:
+    build: .
+    ports:
+      - "20201:5000"
+    restart: unless-stopped

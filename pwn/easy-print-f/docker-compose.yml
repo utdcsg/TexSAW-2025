@@ -1,0 +1,7 @@
+services:
+  easyprintf:
+    build: .
+    ports:
+      - "20221:5000"
+    restart: unless-stopped
+    privileged: true

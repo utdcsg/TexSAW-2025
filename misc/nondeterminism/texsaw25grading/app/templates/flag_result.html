@@ -1,0 +1,24 @@
+<!doctype html>
+<title>Submission Status</title>
+<h1>Hello, {{ student['name'] }}!</h1>
+
+<p><strong>Status:</strong>
+  {% if student['solved'] %}
+    ✅ Accepted! texsaw{omgeasyproof?didyouseepage2aftertheintroduction?}
+  {% elif student['graded'] %}
+    ❌ Rejected
+  {% else %}
+    🟡 Not yet graded
+  {% endif %}
+</p>
+
+{% if student['comment'] %}
+  <p><strong>Comment:</strong><br>{{ student['comment'] }}</p>
+{% endif %}
+
+{% if student['submission'] %}
+  <p><strong>Your Latest Submission:</strong></p>
+  <pre>{{ student['submission'] }}</pre>
+{% endif %}
+
+<a href="/flag">🔙 Check another token</a>

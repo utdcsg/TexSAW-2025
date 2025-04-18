@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Check Submission</title>
+<h1>Check Your Submission Status</h1>
+
+{% if error %}
+  <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+<form method="POST">
+  <label for="token">Enter your token:</label><br>
+  <input type="text" name="token" required>
+  <button type="submit">Check</button>
+</form>

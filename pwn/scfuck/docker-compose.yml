@@ -1,0 +1,8 @@
+services:
+  scfuck:
+    build: .
+    ports:
+      - "20226:5000"
+    restart: unless-stopped
+    privileged: true
+

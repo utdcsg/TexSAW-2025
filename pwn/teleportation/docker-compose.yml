@@ -1,0 +1,8 @@
+services:
+  teleportation:
+    build: .
+    ports:
+      - "20231:5000"
+    restart: unless-stopped
+    privileged: true
+

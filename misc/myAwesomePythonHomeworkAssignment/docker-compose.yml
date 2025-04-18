@@ -1,0 +1,7 @@
+services:
+  myawesomepythonhomeworkassignment:
+    build: .
+    ports:
+      - "20240:5000"
+    restart: unless-stopped
+    privileged: true

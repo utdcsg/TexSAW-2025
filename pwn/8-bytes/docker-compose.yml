@@ -1,0 +1,8 @@
+services:
+  8_bytes:
+    build: .
+    ports:
+      - "2022?:5000"
+    restart: unless-stopped
+    privileged: true
+

@@ -1,0 +1,19 @@
+services:
+  pottermaina_part2_web:
+    build: .
+    ports:
+      - "20202:1337"
+    depends_on:
+      - pottermaina_part2_redis
+    environment:
+      - REDIS_PASS=texsaw{sO459@}
+    volumes:
+      - ./app:/app
+    restart: unless-stopped
+
+  pottermaina_part2_redis:
+    image: redis:alpine
+    command: ["redis-server", "--requirepass", "texsaw{sO459@}"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    restart: unless-stopped

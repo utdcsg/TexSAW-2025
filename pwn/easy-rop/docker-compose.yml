@@ -1,0 +1,8 @@
+services:
+  easy_rop:
+    build: .
+    ports:
+      - "20222:5000"
+    restart: unless-stopped
+    privileged: true
+

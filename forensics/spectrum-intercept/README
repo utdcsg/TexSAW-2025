@@ -1,0 +1,15 @@
+CTF Instructions (do not give to participants):
+This challenge features 7 images, each themed around concepts like lost signals, frequencies, waveforms, and old communication devices.
+
+Hidden within each image is a Caesar ciphered clue embedded in the EXIF metadata. Participants must use an EXIF viewer to inspect each image and uncover the clue.
+
+When decoded, each clue reveals a word or phrase. Combined together in the correct order, they form the full flag.
+
+The order is not given directly—instead, it’s determined by the colors associated with each image, following the order of the rainbow spectrum (ROYGBIV). Each image includes a subtle visual hint to its corresponding color to aid in this sequencing.
+
+Cipher Text: jshwduyji ywfsxrnxxntsx fwj xnqjsyqd xhfyyjwji fhwtxx ymj htqtwji kwjvzjshnjx tk anxngqj qnlmy
+Solution (to be put in flag format): encrypted transmissions are silently scattered across the colored frequencies of visible light
+
+Description to be displayed for participants:
+Something’s interfering with the spectrum. Fragments of a hidden message are scattered across a series of distorted signals. Can you intercept the clues buried in the noise? Tools won't help unless you look beneath the surface. Piece it together—the order matters. Note: (The gaps between signals matter — don't forget to separate what you find.)
+

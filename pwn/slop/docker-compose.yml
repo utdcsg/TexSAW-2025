@@ -1,0 +1,8 @@
+services:
+  slop:
+    build: .
+    ports:
+      - "20230:5000"
+    restart: unless-stopped
+    privileged: true
+

@@ -1,0 +1,3 @@
+To solve this you can leak the address of main using arb read. 
+Then once you have leaked the address this means that you can now calculate the address of the win function and the got.
+So what you want to do is arbitrarily write to the puts got, or if you are fancy the return address.

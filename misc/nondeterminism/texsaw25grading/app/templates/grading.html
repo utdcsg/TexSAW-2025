@@ -1,0 +1,39 @@
+<!doctype html>
+<title>Grading</title>
+<h1>Ungraded Submissions</h1>
+{% for student in students %}
+  <form method="POST" action="/grade/{{ student['key'] }}">
+    <h3>{{ student['name'] }} ({{ student['key'] }})</h3>
+
+    {% if student['submission_type'] == 'text' %}
+      <pre>{{ student['submission'] }}</pre>
+    {% elif student['submission_type'] == 'pdf' %}
+      <p><strong>PDF Submission:</strong></p>
+      <embed src="{{ url_for('uploads', filename=student['submission_filename']) }}" type="application/pdf" width="600" height="400">
+    {% elif student['submission_type'] == 'png' %}
+      <p><strong>PNG Submission:</strong></p>
+      <img src="{{ url_for('uploads', filename=student['submission_filename']) }}" alt="Student Submission" style="max-width: 100%; height: auto;">
+    {% endif %}
+
+    <textarea name="comment" id="comment-{{ student['key'] }}" placeholder="Comments">{{ student['comment'] or "" }}</textarea><br><br>
+
+    <button name="action" value="accept">✅ Accept</button>
+    <button name="action" value="reject">❌ Reject</button>
+    <button name="action" value="reject_save">💾❌ Reject and Save Comment</button>
+  </form>
+
+
+  
+  {% if comments %}
+    <div style="margin: 10px 0;">
+      <strong>Quick Comments:</strong><br>
+      {% for c in comments %}
+        <form method="POST" action="/grade/{{ student['key'] }}" style="display:inline;">
+          <input type="hidden" name="comment" value="{{ c['text'] }}">
+          <button name="action" value="reject">{{ c['text'] }}</button>
+        </form>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <hr>
+{% endfor %}
